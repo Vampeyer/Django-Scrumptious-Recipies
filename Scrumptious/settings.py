@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'Scrumptious.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '1EB*1FG3aEAA*C-e1F45GgE32E5gBf3E',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '32814',
     }
 }
 
