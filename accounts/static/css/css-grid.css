@@ -1,0 +1,76 @@
+.css-grid{   
+display: grid;
+
+grid-template-columns: 25% 25% 25% 25%; 
+grid-template-rows: 25% 25% 25% 25%;
+
+
+
+/* After Adjusting my grid , I had to bring down space here  */
+margin-bottom: -8rem;
+
+}
+
+
+/* Ingredients Table   - html -   Table / grid */ 
+#tableHead { 
+    border: 4px double rgb(200, 57, 57);
+}
+table { 
+    border: 4px double rgb(68, 68, 68);
+}
+
+
+
+
+
+/*  a little adjusting to make it pretty !   */
+.foodItem > img { 
+    max-width: 10em;
+    max-height: 6em;
+    margin-left: 5px;
+    margin-top: 8px;
+
+}
+.foodItem { 
+    padding: .5em;
+    padding-bottom: 80px;
+    margin-top: 5rem;
+}
+
+
+
+
+
+/*    An added flexbox bat a query , 
+because the grid model causes issues at lower screen widths .    */
+
+
+.ingredientsandSteps { 
+    padding-top: 15rem;
+}
+
+
+
+@media screen and (max-width: 612px){
+    
+
+    .css-grid{   
+        display:flex;
+        flex-wrap: wrap;
+        
+        
+        /* After Adjusting my grid , I had to bring down space here  */
+   
+        }
+
+
+
+
+
+
+        
+.ingredientsandSteps { 
+    padding-top: 35rem;
+}
+}

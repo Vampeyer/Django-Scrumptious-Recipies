@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ recipe_object.title }} - Scrumptious Recipes
+{% endblock title %}
+
+{% load static %}
+
+    {% block content %}
+    
+    <link rel="stylesheet" href="{% static 'css/recipes.css' %}">  
+
+    <link rel="stylesheet" href="{% static 'css/iconAnimation.css' %}">  
+    
+
+    <header>
+        <nav>
+            <a href="{% url 'recipes_list' %}">main page</a>
+            <a href='{% url "create_post" %}'> Create Recipe</a>
+            <a href="{% url 'edits' recipe_object.id %}"> Edit</a>
+        </nav>
+    </header>
+    <main>
+        <h1>
+            {{ recipe_object.title }}
+        </h1>
+        <h2> {{recipe_object.author.username|default:'Anonymous'}}</h2>
+        <img src="{{ recipe_object.picture }}">
+        <div>
+                4.3 stars
+            </div>
+            <p>{{ recipe_object.description }}</p>
+   
+            <table>
+                <h2> Ingredients </h2>
+                <thead>
+                    <tr>
+                    
+                    <th> Amount </th> 
+                    <th> Food Item </th></tr>
+                </thead>
+                <tbody>
+                    {% for ingredient in recipe_object.ingredients.all %}
+                    <tr>
+                        <td>{{ ingredient.amount }}</td>
+                        <td>{{ingredient.food_item}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h2> Steps </h2>
+            <ol>
+                {% for step in recipe_object.steps.all %}
+                <li>{{ step.instruction }}</li>
+                {% endfor %}
+            </ol>
+<div>     Item Number ,  {{ recipe_object.id }}  , is owned by {{ recipe_object.author }}  </div> 
+        </main>
+    {% endblock content %}

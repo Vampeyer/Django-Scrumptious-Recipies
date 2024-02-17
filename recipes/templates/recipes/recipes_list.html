@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<link rel="stylesheet" href="{% static 'css/recipes.css' %}">  
+
+<link rel="stylesheet" href="{% static 'css/iconAnimation.css' %}">  
+
+
+        <header>
+            <nav>
+                <a href="{% url 'recipes_list' %}">Main Page</a>
+                <a href='{% url "create_post" %}'> Create Recipe</a>
+                {% if user.is_authenticated %}
+                    Hello, {{user.username}}
+                    <a href="{% url 'logout' %}"> Logout</a>
+                    <a href="{% url 'my_recipe_list' %}">My recipes</a>
+                {% else %}
+                    <a href="{% url 'signup' %}"> Sign up here</a>
+                    <a href="{% url 'login' %}"> Login here</a>
+                {% endif %}
+
+            </nav>
+        </header>
+        <main>
+
+
+            <div class="mainHeader" >
+
+                <img src="{% static 'image/scrumptious-img.png' %}" alt="Scrumptious purple party text ! ">
+                <img src="{% static 'image/Recipies-img.png' %}" alt="Recipes purple party text ! ">
+
+                <img class="iconAnimation"  src="{% static 'image/icon.png' %}" alt="Recipes purple party text ! ">
+
+
+
+               </div>
+        
+              <h1> Scrumptious Recipes </h1>
+              <h2> All the food that's fit to eat</h2>
+        
+        
+
+
+
+
+
+
+              
+
+
+
+            <div class="recipe-grid">
+                {% for recipe in list%}
+                <div>
+                    <h3>
+                        <a href="details/{{recipe.id}}">{{ recipe.title }}</a>
+                    </h3>
+                    <img  src="{{ recipe.picture }}">
+                    <div class = 'grid-item'> 4.3 stars</div>
+                    <div>
+                        Published {{recipe.created_on|date:"D, M d, Y"}}
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+
+
+         
+
+
+        </main>
+{% endblock content %}

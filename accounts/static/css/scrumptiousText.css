@@ -1,0 +1,63 @@
+.scrumptiousTextImage { 
+   display: flex;
+   flex-wrap: wrap;
+   color: antiquewhite;
+   
+}
+
+.scrumptiousTextContainer  { 
+    
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; 
+  justify-content: center;
+  border: 1px solid rgb(13, 255, 0);
+}
+.scrumptiousText , h2 { 
+padding-left: 25px;
+}
+.scrumptiousText , h1 { 
+    padding-right: 25px;
+    }
+
+
+.scrumptiousText { 
+
+    text-align: center; 
+    box-shadow: 5px 5px 10px 10px black;
+    max-width: 200px;
+    border: 1px solid rgb(60, 0, 255);
+    
+    
+}
+
+
+
+
+
+
+
+.importedText1  { 
+    border: 1px solid red;
+
+    
+    background: url(/scrumptious-img.png);
+    background-size: 100%;
+    min-width:20em;
+    min-height: 5em;
+    background-repeat: no-repeat;
+
+}
+
+.importedText2 { 
+    border: 1px solid red;
+    width: 20rem;
+    background: url(/Recipies-img.png);
+    background-size: cover;
+
+    background-size: 100%;
+    min-width:20em;
+    min-height: 7em;
+    background-repeat: no-repeat;
+
+}

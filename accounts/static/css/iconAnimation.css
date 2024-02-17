@@ -1,0 +1,76 @@
+:root { 
+     --sunsetGradient: linear-gradient(rgb(245, 95, 14) , rgb(245, 209, 0));
+     --metalGradient: linear-gradient(rgb(125, 123, 123), rgb(211, 211, 208));
+     --skyBlueGradient :linear-gradient(rgb(165, 221, 235), rgb(221, 226, 230));
+ }
+h1 { 
+     color:#f58700;
+}
+
+
+.iconAnimation { /*  My element   */
+     position:fixed;
+     top: 50px;
+     padding-bottom: 5px;
+     width: 25%;
+    }
+
+
+
+/*  Animation  */
+    @keyframes example {
+     from {background-color: rgb(245, 95, 14)  ;   }
+     to {background-color: rgb(245, 209, 0);  right: 50px; }
+
+
+  0% {   /* From here   */
+     right:10rem;
+     transform: rotate(-100deg)  ;
+     border-radius: 50%;
+
+     border: 10px double  black ;}
+
+
+
+
+50% { 
+     top:100px
+}
+
+
+
+     
+  
+  100% { 
+     right: 30px;
+     transform: rotate(160deg);
+     
+     border: 10px dotted  black ;
+
+  }     /*  Too here   */
+
+
+   }
+
+
+
+
+   
+   /* The element to apply the animation to */
+.iconAnimation {
+     width: 100px;
+     height: 100px;
+     background-color: red;
+     animation-name: example;
+     animation-duration: 1.5s;
+
+     animation-direction: alternate-reverse;
+     animation-iteration-count: infinite;
+     transition-timing-function: ease-in-out;
+     transition-delay: .7s;
+     
+
+
+
+
+   }
